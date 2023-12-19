@@ -7,8 +7,8 @@
 
 .text
 .align 2
-.global checkPrimeNumber
-.type checkPrimeNumber, %function
+.global cpn
+.type cpn, %function
 
 checkPrimeNumber:
 	push {fp, lr}

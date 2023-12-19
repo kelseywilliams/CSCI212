@@ -59,7 +59,7 @@ main:
 
     bl deal_cards
 
-    @printf("Here is your hand\n")  @player - hand
+    @printf("Current Hand\n")  @player - hand
     ldr r0, = hand1
     bl printf
 
@@ -91,13 +91,16 @@ main:
     mov r1, sp  @hand
 	ldr r0, [fp, #-8]
 
-	mov r3, #142
+	mov r3, #255
+    add r3, r3, #255
+    add r3, r3, #255
+    add r3, r3, #230
     @                      r0           r1               r2              r3
     @                   address    player hand    user_input(bits) last 3 pal id
     @@void replace_card(FILE *fp, unsigned *hand, unsigned indices, unsigned uid);
     bl replace_card
 
-    @printf("Here is your new hand\n")  @player - new hand
+    @printf("New Hand\n")  @player - new hand
     ldr r0, = hand2
     bl printf
 
